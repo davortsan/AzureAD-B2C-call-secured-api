@@ -1,0 +1,11 @@
+﻿namespace TasksWeb.Models
+{
+    public class TaskModel
+    {
+        public DateTime LimitDate { get; set; }
+
+        public int Priority { get; set; }
+
+        public string TaskName { get; set; }
+    }
+}
