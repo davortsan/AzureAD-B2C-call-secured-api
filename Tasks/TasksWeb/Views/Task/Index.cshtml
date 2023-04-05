@@ -6,20 +6,23 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<table>
-    <tr>
-        <th>LimitDate</th>
-        <th>Priority</th>
-        <th>TaskName</th>
-    </tr>
-    
-    @foreach (TaskModel task in Model)
-    {
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <table>
         <tr>
-            <td>@task.LimitDate</td>
-            <td>@task.Priority</td>
-            <td>@task.TaskName</td>
+            <th>LimitDate</th>
+            <th>Priority</th>
+            <th>TaskName</th>
         </tr>
-    }
+    
+        @foreach (TaskModel task in Model)
+        {
+            <tr>
+                <td>@task.LimitDate</td>
+                <td>@task.Priority</td>
+                <td>@task.TaskName</td>
+            </tr>
+        }
 
-</table>
+    </table>
+}
